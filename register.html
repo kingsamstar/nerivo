@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nerivo-Register</title>
-    <link rel="stylesheet" href="../css/register.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create account · nearby</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
 </head>
-<body>
-    
+
+<body data-page="register">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="auth-wrap">
+    <main class="auth-box" id="main">
+      <div class="auth-top"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true"><svg
+              width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg></span><span class="brand-text">nearby</span></a></div>
+      <div class="auth-card">
+        <h1>Create your account</h1>
+        <p class="lead">Find places near you, or list your business.</p>
+        <div class="alert" id="alert" role="alert" tabindex="-1" hidden></div>
+        <form data-form novalidate class="form-stack">
+          <fieldset style="border:0;padding:0;margin:0">
+            <legend class="sr-only">Account type</legend>
+            <div class="roles">
+              <label><input type="radio" name="role" value="customer" checked>I'm acustomer</label>
+              <label><input type="radio" name="role" value="business">I own a business</label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" autocomplete="name" placeholder="" aria-describedby="name-err">
+            <span class="err" id="name-err" role="alert">
+
+            </span>
+          </div>
+          <div data-business-only hidden>
+            <div class="field"><label for="bizname">Business name</label><input id="bizname" type="text"
+                autocomplete="organization" placeholder="e.g. Sunrise Hotel" aria-describedby="bizname-err"><span
+                class="err" id="bizname-err" role="alert"></span></div>
+          </div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" autocomplete="tel"
+              placeholder="0803 000 0000" aria-describedby="phone-err"><span class="err" id="phone-err"
+              role="alert"></span></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email"
+              placeholder="you@example.com" aria-describedby="email-err"><span class="err" id="email-err"
+              role="alert"></span></div>
+          <div class="field"><label for="password">Password</label>
+            <div class="pw"><input id="password" type="password" autocomplete="new-password"
+                aria-describedby="password-err meter-label" data-meter><button type="button" data-toggle-pw="password"
+                aria-pressed="false" aria-label="Show or hide password">Show</button></div>
+            <div class="meter" aria-hidden="true"><span id="meter-bar"></span></div>
+            <p class="meter-label" id="meter-label" aria-live="polite"></p>
+            <p class="hint">At least 8 characters, with a letter and a number.</p>
+            <span class="err" id="password-err" role="alert"></span>
+          </div>
+          <div class="field"><label for="confirm">Confirm password</label>
+            <div class="pw"><input id="confirm" type="password" autocomplete="new-password"
+                aria-describedby="confirm-err"><button type="button" data-toggle-pw="confirm" aria-pressed="false"
+                aria-label="Show or hide confirm password">Show</button></div>
+
+            <span class="err" id="confirm-err" role="alert"></span>
+          </div>
+          <label class="check"><input type="checkbox" id="terms"> <span>I agree to the <a href="#">Terms</a> and <a
+                href="#">Privacy Policy</a>.</span></label>
+          <button class="submit" type="submit">Create account</button>
+        </form>
+        <p class="foot">Already have an account? <a href="login.html">Log in</a></p>
+        <p class="hint" style="text-align:center" data-business-only hidden>Business accounts can submit documents for a
+          Verified badge after sign-up.</p>
+        <p class="note">Demo mode: no server needed. Open <code>js/auth-pages.js</code> and set
+          <code>DEMO = false</code> to use the real API.
+        </p>
+      </div>
+    </main>
+  </div>
+  <script src="js/auth-pages.js"></script>
 </body>
+
 </html>

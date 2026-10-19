@@ -1,0 +1,4 @@
+/* Admin dashboard specifics */
+.doc{display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;color:var(--accent);text-decoration:none;margin-right:.75rem}
+.doc:hover{text-decoration:underline}
+.reason{font-size:.8rem;color:#a5372a}
