@@ -3,11 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log in · nearby</title>
+  <title>Log in · nerivo</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/auth.css">
 </head>
 <body data-page="login">
 
+  <a href="#main" class="skip-link">Skip to main</a>
+
+  <div class="auth-wrap">
+    <main class="auth-box" id="main">
+
+      <div class="auth-top">
+        <a href="index.html" class="brand">
+          <!-- svg here for brand -->
+        </a>
+      </div>
+
+      <div class="auth-card">
+        <h1>Welcome back</h1>
+        <p class="lead">Login to your Nerivo account</p>
+
+        <div class="alart" id="alart" role="alart" tabindex="-1" hidden></div>
+
+        <form class="form-stack" data-form novalidate>
+
+          <fieldset style="border: 0; margin: 0; padding: 0;">
+            <legend class="sr-only">Login As</legend>
+            <div class="roles">
+              <label><input type="radio" name="role" value="customer" checked>customer</label>
+              <label><input type="radio" name="role" value="business">Business</label>
+              <label><input type="radio" name="role" value="admin">Admin</label>
+
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-err">
+            <span class="err" id="email-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pw">
+              <input id="password" type="password" autocomplete="current-password" aria-describedby="password-err">
+              <button type="button" data-toggle-pw="password" aria-pressed="false" aria-label="Show or hide password">Show</button>
+            </div>
+            <span class="err" id="password-err" role="alert"></span>
+          </div>
+
+          <div class="row">
+          <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+            <a href="forgot-password.html">Forgot password?</a>
+          </div>
+          <button type="submit" class="submit">Log in</button>
+        </form>
+
+        <p class="foot">New here? <a href="register.html">Create an account</a></p>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
