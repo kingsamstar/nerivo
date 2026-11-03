@@ -10,7 +10,39 @@
 </head>
 <body>
 
-  <!-- large svg here -->
+   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </symbol>
+      <symbol id="i-store" viewBox="0 0 24 24">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24">
+        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+        <line x1="4" y1="22" x2="4" y2="15" />
+      </symbol>
+    </defs>
+  </svg>
 
   <a href="#main" class="skip-link">Skip to main</a>
 
@@ -19,26 +51,40 @@
     <aside class="side">
       <a href="../index.html" class="brand">
 
-        <!-- brand svg here -->
+         <span class="brand-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+        </span><span class="brand-text">narivo</span>
       </a>
 
       <nav aria-label="dashboard navigation">
         <div class="menu" role="tablelist" aria-orientation="vertical">
 
           <button id="t-users" role="tab" aria-controls="users" data-panel="users" data-title="Users" aria-selected="false">
-            <!-- svg here -->
+            <svg class="ic" aria-hidden="true">
+              <use href="#i-users" />
+            </svg>
             Users</button>
 
           <button id="t-businesses" role="tab" aria-controls="businesses" data-panel="businesses" data-title="Businesses" aria-selected="false">
-            <!-- svg here -->
-            businesses</button>
+            <svg class="ic" aria-hidden="true">
+              <use href="#i-store" />
+            </svg>
+            Businesses</button>
 
           <button id="t-verification" role="tab" aria-controls="verification" data-panel="verification" data-title="Verification" aria-selected="false">
-            <!-- svg here -->
+            <svg class="ic" aria-hidden="true">
+              <use href="#i-flag" />
+            </svg>
             Verification Requests</button>
 
           <button id="t-reports" role="tab" aria-controls="reports" data-panel="reports" data-title="Reports" aria-selected="false">
-            <!-- svg here -->
+            <svg class="ic" aria-hidden="true">
+              <use href="#i-grid" />
+            </svg>
             Report Review</button>
         </div>
       </nav>
@@ -89,67 +135,167 @@
         </div>
       </div>
 
-      <section class="panel" id="users" role="tabpanel" aria-labelledby="t-users" hidden>
-        <h2>All Users</h2>
-
-        <div class="scro">
-          <table class="tb1">
+<section class="panel" role="tabpanel" id="users" aria-labelledby="t-users" hidden>
+        <h2>All users</h2>
+        <div class="scroll">
+          <table class="tbl">
             <thead>
               <tr>
                 <th scope="col">User</th>
-                <th scope="col">Roles</th>
+                <th scope="col">Role</th>
                 <th scope="col">Status</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-
             <tbody>
               <tr data-row>
-                <td>
-                  <strong>John Doe</strong>
-                  <small>johndoe@gmail.com</small>
-                </td>
-
+                <td><strong>John Dooe</strong><small>john@mail.com</small></td>
                 <td>Customer</td>
+                <td><span class="tag ok" data-status>Active</span></td>
                 <td>
                   <div class="acts">
-
-                    <button class="btn sm" data-act="Suspend"></button>
+                    <button class="btn sm" data-act="suspend">Suspend</button>
+                    <button class="btn sm danger" data-act="remove">Delete</button>
                   </div>
                 </td>
               </tr>
-
               <tr data-row>
+                <td><strong>Sunrise Hotel</strong><small>owner@sunrise.ng</small></td>
+                <td>Business</td>
+                <td><span class="tag ok" data-status>Active</span></td>
                 <td>
-                  <strong>David</strong>
-                  <small>david@gmail.com</small>
-                </td>
-
-                <td>Customer</td>
-                <td>
-                  <div class="acts">
-                    <button class="btn sm" data-act="Suspend"></button>
-                  </div>
+                  <div class="acts"><button class="btn sm" data-act="suspend">Suspend</button><button
+                      class="btn sm danger" data-act="remove">Delete</button></div>
                 </td>
               </tr>
-
               <tr data-row>
-                <td>
-                  <strong>Dickson</strong>
-                  <small>dickson@gmail.com</small>
-                </td>
-
+                <td><strong>Tunde Bello</strong><small>tunde@mail.com</small></td>
                 <td>Customer</td>
+                <td><span class="tag bad" data-status>Suspended</span></td>
                 <td>
-                  <div class="acts">
-                    <button class="btn sm" data-act="Suspend"></button>
-                  </div>
+                  <div class="acts"><button class="btn sm" data-act="suspend">Reactivate</button><button
+                      class="btn sm danger" data-act="remove">Delete</button></div>
+                </td>
+              </tr>
+              <tr data-row>
+                <td><strong>Glow Salon</strong><small>hello@glow.ng</small></td>
+                <td>Business</td>
+                <td><span class="tag ok" data-status>Active</span></td>
+                <td>
+                  <div class="acts"><button class="btn sm" data-act="suspend">Suspend</button><button
+                      class="btn sm danger" data-act="remove">Delete</button></div>
                 </td>
               </tr>
             </tbody>
           </table>
-
         </div>
+      </section>
+      <section class="panel" role="tabpanel" id="businesses" aria-labelledby="t-businesses" hidden>
+        <h2>All businesses</h2>
+        <div class="scroll">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th scope="col">Business</th>
+                <th scope="col">Category</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-row>
+                <td><strong>Blue Resturant</strong><small>Blue Ltd</small></td>
+                <td>Resturant</td>
+                <td><span class="tag ok" data-status>Verified</span></td>
+                <td>
+                  <div class="acts"><button class="btn sm danger" data-act="remove">Remove</button></div>
+                </td>
+              </tr>
+              <tr data-row>
+                <td><strong>Mama Calabar Kitchen</strong><small>Ekabong K.</small></td>
+                <td>Restaurant</td>
+                <td><span class="tag warn" data-status>Unverified</span></td>
+                <td>
+                  <div class="acts"><button class='btn sm' data-act='verify'>Verify</button>
+                    <button
+                      class="btn sm danger" data-act="remove">Remove</button>
+                    </div>
+                </td>
+              </tr>
+              <tr data-row>
+                <td><strong>Oga Emeke Mechanic</strong><small>Emeka Okafor</small></td>
+                <td>Mechanic</td>
+                <td><span class="tag ok" data-status>Verified</span></td>
+                <td>
+                  <div class="acts"><button class="btn sm danger" data-act="remove">Remove</button></div>
+                </td>
+              </tr>
+              <tr data-row>
+                <td><strong>QuickFuel</strong><small>QF Energy</small></td>
+                <td>Fuel station</td>
+                <td><span class="tag warn" data-status>Unverified</span></td>
+                <td>
+                  <div class="acts"><button class='btn sm' data-act='verify'>Verify</button><button
+                      class="btn sm danger" data-act="remove">Remove</button></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="verification" role="tabpanel" aria-labelledby="t-verification" hidden>
+        <h2>Verification requests</h2>
+        <div class="item" data-row>
+          <div class="top">
+            <strong>Sunrise Hotel</strong>
+            <span class="tag warn" data-status>pending</span>
+          </div>
+
+          <p>Abimbola . submitted  2 days ago</p>
+
+          <a href="#" class="doc">CAC certificate</a>
+          <a href="#" class="doc">Business license</a>
+
+          <div class="acts">
+            <button class="btn sm" data-act="verify">Verify</button>
+            <button class="btn sm danger" data-act="reject">Reject</button>
+          </div>
+        </div>
+
+        <div class="item" data-row>
+          <div class="top">
+            <strong>Mechanic Shop</strong>
+            <span class="tag warn" data-status>pending</span>
+          </div>
+
+          <p>Emeka . submitted  3 days ago</p>
+
+          <a href="#" class="doc">CAC certificate</a>
+          <a href="#" class="doc">Business license</a>
+
+          <div class="acts">
+            <button class="btn sm" data-act="verify">Verify</button>
+            <button class="btn sm danger" data-act="reject">Reject</button>
+          </div>
+        </div>
+        <div class="item" data-row>
+          <div class="top">
+            <strong>Calabar Kitchen</strong>
+            <span class="tag warn" data-status>pending</span>
+          </div>
+
+          <p>Abasi . submitted  7 days ago</p>
+
+          <a href="#" class="doc">CAC certificate</a>
+          <a href="#" class="doc">Business license</a>
+
+          <div class="acts">
+            <button class="btn sm" data-act="verify">Verify</button>
+            <button class="btn sm danger" data-act="reject">Reject</button>
+          </div>
+        </div>
+
       </section>
     </div>
   </div>
